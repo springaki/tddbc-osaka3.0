@@ -9,11 +9,11 @@ class VendingMachine
   end
 
   def total_amount
-    @amount || 0
+    @amount
   end
 
   def payback
-    0
+    @amount
   end
 
 end

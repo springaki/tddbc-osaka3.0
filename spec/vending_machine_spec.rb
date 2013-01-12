@@ -37,5 +37,11 @@ describe VendingMachine do
       end
       @vending_machine.total_amount.should eq(1660)
     end
+
+    it "1100円を投入して払い戻しを行うと、1100円が返却される" do
+      @vending_machine.insert(100)
+      @vending_machine.insert(1000) 
+      @vending_machine.payback.should eq(1100)
+    end
   end
 end
