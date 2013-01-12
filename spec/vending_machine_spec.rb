@@ -12,6 +12,10 @@ describe VendingMachine do
     it "総計を取得すると0円が返却される" do
       @vending_machine.total_amount.should eq(0)
     end
+    it "払い戻しを行うと、０円が返却される" do
+      @vending_machine.payback.should eq(0)
+    end
+
   end
 
 
