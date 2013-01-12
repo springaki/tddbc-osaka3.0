@@ -13,9 +13,7 @@ class VendingMachine
   end
 
   def payback
-    payback_money = @amount
-    @amount = 0
-    payback_money
+    @amount.tap{@amount = 0}
   end
 
 end
