@@ -1,0 +1,3 @@
+describe VendingMachine do
+
+end
