@@ -1,8 +1,10 @@
-class VendingMachine 
+class VendingMachine
 
-  def total_amount
-    0
+  def insert(money)
+    @amount = money
   end
 
-
+  def total_amount
+    @amount || 0
+  end
 end

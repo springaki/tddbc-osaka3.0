@@ -13,4 +13,11 @@ describe VendingMachine do
     vending_machine.insert(100)
     vending_machine.total_amount.should eq(100)
   end
+
+  it "投入は複数回できる" do
+    vending_machine = VendingMachine.new
+    vending_machine.insert(100)
+    vending_machine.insert(1000)
+    vending_machine.total_amount.should eq(1100)
+  end
 end
