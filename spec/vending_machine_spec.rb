@@ -26,5 +26,12 @@ describe VendingMachine do
       @vending_machine.insert(1000)
       @vending_machine.total_amount.should eq(1100)
     end
-  end  
+
+    it "投入可能なお金が全て投入出来る" do
+      [10, 50, 100, 500, 1000].each do |money|
+        @vending_machine.insert(money)
+      end
+      @vending_machine.total_amount.should eq(1660)
+    end
+  end
 end
