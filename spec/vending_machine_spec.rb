@@ -3,21 +3,23 @@
 require_relative "../vending_machine"
 
 describe VendingMachine do
+
+  before do
+    @vending_machine = VendingMachine.new
+  end
+
   it "金額未投入の場合、総計を取得すると0円が返却される" do
-    vending_machine = VendingMachine.new
-    vending_machine.total_amount.should eq(0)
+    @vending_machine.total_amount.should eq(0)
   end
 
   it "100円を投入できる" do
-    vending_machine = VendingMachine.new
-    vending_machine.insert(100)
-    vending_machine.total_amount.should eq(100)
+    @vending_machine.insert(100)
+    @vending_machine.total_amount.should eq(100)
   end
 
   it "投入は複数回できる" do
-    vending_machine = VendingMachine.new
-    vending_machine.insert(100)
-    vending_machine.insert(1000)
-    vending_machine.total_amount.should eq(1100)
+    @vending_machine.insert(100)
+    @vending_machine.insert(1000)
+    @vending_machine.total_amount.should eq(1100)
   end
 end
